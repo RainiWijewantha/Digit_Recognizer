@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognizer</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 90vh">
+        <h1>Digit Recognizer</h1>
+
+        <form id="prediction-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">Upload a digit image:</label>
+                <input type="file" class="form-control-file" id="image" accept=".png, .jpg, .jpeg" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+            <div id="loading-spinner" class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </form>
+
+        <div id="result">
+            <h2>Prediction Result:</h2>
+            <p id="predicted-digit"></p>
+            <p class="error-message" id="error-message"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="static/script.js"></script>
+</script>
+</body>
+</html>
