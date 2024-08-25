@@ -6,3 +6,12 @@
 <li>Create virtual environment to manage dependencies using venv.</li>
 <li>Install dependencies: Use pip install to install required python packages in requirements.txt file.</li>
 
+<h2>Setup Project:</h2>
+
+<ul>
+<ol>Clone the project repository:</ol>
+<li>git clone [text](https://github.com/RainiWijewantha/Digit_Recognizer)</li>
+<ol>Create virtual environment:</ol>
+<li>[text]python -m venv venv</li>
+<li></li>
+</ul>
