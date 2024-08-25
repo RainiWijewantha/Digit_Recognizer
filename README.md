@@ -8,10 +8,9 @@
 
 <h2>Setup Project:</h2>
 
-<ul>
-<ol>Clone the project repository:</ol>
-<li>git clone [text](https://github.com/RainiWijewantha/Digit_Recognizer)</li>
-<ol>Create virtual environment:</ol>
-<li>[text]python -m venv venv</li>
+
+Clone the project repository:
+<li>git clone https://github.com/RainiWijewantha/Digit_Recognizer</li>
+Create virtual environment:
+<li>python -m venv venv</li>
 <li></li>
-</ul>
