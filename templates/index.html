@@ -8,17 +8,51 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00ff6a;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #loading-spinner {
+            display: none;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #00ff6a;
+            border-color: #00ff6a;
+        }
+
+        .btn-primary:hover{
+            background-color: #00ccff;
+            border-color: #00ccff;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 90vh">
         <h1>Digit Recognizer</h1>
-
-        <form id="prediction-form" enctype="multipart/form-data">
+<br><br><br>
+        <form id="prediction-form" action="/predict" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="image">Upload a digit image:</label>
-                <input type="file" class="form-control-file" id="image" accept=".png, .jpg, .jpeg" required>
+                <label for="image" style="text-align: center;">Upload a digit image:</label><br>
+                <input type="file" class="form-control-file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Predict</button>
@@ -26,12 +60,6 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </form>
-
-        <div id="result">
-            <h2>Prediction Result:</h2>
-            <p id="predicted-digit"></p>
-            <p class="error-message" id="error-message"></p>
-        </div>
     </div>
 </div>
 
@@ -40,7 +68,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script src="static/script.js"></script>
+<script>
+    document.getElementById('prediction-form').addEventListener('submit', function() {
+        // Show the loading spinner while the form is being submitted
+        document.getElementById('loading-spinner').style.display = 'inline-block';
+    });
 </script>
 </body>
 </html>
